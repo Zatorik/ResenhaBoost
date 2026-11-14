@@ -10,8 +10,8 @@ minecraft {
     mappings channel: 'official', version: minecraft_version
     runs {
         configureEach {
-            workingDir.convention layout.projectDirectory.dir('run')
-            systemProperty 'forge.logging.console.level', 'info'
+            workingDir = file('run')
+            property 'forge.logging.console.level', 'info'
             mods { resenhaboost { source sourceSets.main } }
         }
         client {}
@@ -20,7 +20,7 @@ minecraft {
 }
 repositories { }
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
 }
 processResources {
     def replaceProperties = [
