@@ -11,7 +11,6 @@ minecraft {
     runs {
         configureEach {
             workingDir = file('run')
-            property 'forge.logging.console.level', 'info'
             mods { resenhaboost { source sourceSets.main } }
         }
         client {}
